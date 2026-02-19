@@ -20,7 +20,7 @@ app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-// app.get("/", (req, res) => {
-//   res.send("hey");
-// });
+app.get("/", (req, res) => {
+  res.send("hey");
+});
 app.listen(3000);
