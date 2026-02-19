@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Punarnava</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#E91E63",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+<body class="min-h-screen relative flex items-center justify-center overflow-hidden px-4 py-10">
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/purse-bg.jpg"
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  <!-- PINK OVERLAY -->
+  <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+
+  <!-- MAIN CARD -->
+  <div
+    class="relative z-10 w-full max-w-5xl bg-white/90 backdrop-blur-xl 
+           rounded-2xl shadow-2xl 
+           p-6 sm:p-8 md:p-10 
+           grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+
+    <!-- LEFT SIDE -->
+    <div class="flex flex-col justify-center text-gray-800 space-y-6 text-center md:text-left">
+
+      <!-- TITLE -->
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 justify-center md:justify-start">
+
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+          Welcome to
+        </h1>
+
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl text-primary font-normal"
+          style="font-family: 'Great Vibes', cursive;">
+          Punarnava
+        </h1>
+
+      </div>
+
+      <p class="text-base sm:text-lg text-gray-700 max-w-md mx-auto md:mx-0">
+        Discover luxury purses crafted for modern women.
+      </p>
+
+      <div class="w-16 sm:w-20 h-1 bg-primary rounded mx-auto md:mx-0"></div>
+
+    </div>
+
+    <!-- RIGHT SIDE AUTH -->
+    <div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center md:justify-start gap-6 mb-6 text-sm sm:text-base">
+        <button
+          id="signupTab"
+          class="text-primary font-semibold border-b-2 border-primary pb-1">
+          Sign Up
+        </button>
+
+        <button
+          id="loginTab"
+          class="text-gray-500 pb-1">
+          Sign In
+        </button>
+      </div>
+
+      <!-- SIGNUP FORM -->
+      <form
+        id="signupForm"
+        action="/users/register"
+        method="POST"
+        class="space-y-4 sm:space-y-5">
+
+        <input
+          type="text"
+          name="fullname"
+          placeholder="Full Name"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <!-- Gender -->
+        <div class="flex gap-6 text-sm justify-center md:justify-start">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="gender" value="female" required />
+            Female
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="radio" name="gender" value="other" />
+            Other
+          </label>
+        </div>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Create password"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm password"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <button
+          class="w-full bg-primary text-white py-3 rounded-md hover:bg-pink-600 transition">
+          Sign Up →
+        </button>
+
+      </form>
+
+      <!-- LOGIN FORM -->
+      <form
+        id="loginForm"
+        action="/users/login"
+        method="POST"
+        class="space-y-4 sm:space-y-5 hidden">
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          required
+        />
+
+        <button
+          class="w-full bg-primary text-white py-3 rounded-md hover:bg-pink-600 transition">
+          Sign In →
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
