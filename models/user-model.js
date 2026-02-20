@@ -7,13 +7,19 @@ const userSchema = new mongoose.Schema({
     minlength: 3,
     trim: true,
   },
-  email: String,
-  password: String,
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   cart: {
     type: Array,
     default: [],
   },
-//   isadmin: Boolean,
+  //   isadmin: Boolean,
   orders: {
     type: Array,
     default: [],
